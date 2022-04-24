@@ -1,0 +1,200 @@
+@use 'fonts';
+
+
+*
+{
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 18px;
+  font-family: "Pro Display";
+  height: 100%;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+h1 {
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+p {
+  word-break: break-all;
+  max-width: 300px;
+}
+
+.wrapper {
+  margin-top: 5%;
+  height:60%;
+  width:500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  padding: 10px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 0 10px;
+
+
+  .search__wrapper {
+    height: 45px;
+    width: 97%;
+    border: 1px solid #989898;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+
+    input[type=text] {
+      outline: none;
+      border: none;
+      height: 95%;
+      width: 90%;
+      text-align: left;
+    }
+
+    .input-btn {
+      height: 24px;
+      width: 24px;
+      cursor: pointer;
+      position: relative;
+
+      &::before, &::after {
+        content: '';
+        position: absolute;
+        top: 10px;
+        display: block;
+        width: 24px;
+        height: 1px;
+        background: #998899;
+      }
+      &::before {
+        transform: rotate(90deg);
+      }
+
+      &::after {
+        transform: rotate(180deg);
+      }
+
+    }
+
+  }
+
+  .todo-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 0;
+    width: 97%;
+
+    .task {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 45px;
+      border: 1px solid #989898;
+      width: 100%;
+      border-radius: 5px;
+
+      .done-btn {
+        width: 21px;
+        height: 21px;
+        position: relative;
+        cursor: pointer;
+        top: 0px;
+        left: -17px;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -17px;
+          border:1px solid #989898;
+          border-radius: 50%;
+          width:21px;
+          height: 21px;
+        }
+      }
+
+      .done {
+        width: 21px;
+        height: 21px;
+        position: relative;
+        cursor: pointer;
+        top: 0px;
+        left: -17px;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -17px;
+          border:1px solid #989898;
+          border-radius: 50%;
+          width:21px;
+          height: 21px;
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 4px;
+          left: -13px;
+          background: #C4C4C4;
+          border-radius: 50%;
+          width:15px;
+          height: 15px;
+        }
+      }
+
+      .delete-btn {
+          position: relative;
+          top: 0px;
+          right: -35px;
+          height: 24px;
+          width: 24px;
+          cursor: pointer;
+
+          &::before, &::after {
+            content: '';
+            position: absolute;
+            top: 10px;
+            display: block;
+            width: 24px;
+            height: 1px;
+            background: #998899;
+          }
+          &::before {
+            transform: rotate(45deg);
+          }
+
+          &::after {
+            transform: rotate(-45deg);
+          }
+      }
+    }
+
+    .task-done {
+      order: 1;
+      background: #d3d3d359;
+    }
+  }
+
+}
